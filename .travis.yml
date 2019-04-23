@@ -3,7 +3,4 @@ os: osx
 node_js:
     - "7"
 install:
-    - npm install -g eslint
-
-script:
-    - eslint test.js
+    - npm install —-save-dev mocha
