@@ -2,3 +2,7 @@ language: node_js
 node_js:
     - "7"
 
+script:
+    - npm install eslint --save-dev
+    - ./node_modules/.bin/eslint --init
+    - ./node_modules/.bin/eslint test.js
