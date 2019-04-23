@@ -1,6 +1,9 @@
 language: node_js
+os: osx
 node_js:
     - "7"
+install:
+    - npm install -g eslint
 
 script:
-    - npm install eslint --save-dev
+    - eslint test.js
