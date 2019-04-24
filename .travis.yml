@@ -2,8 +2,11 @@ language: node_js
 os: osx
 node_js:
     - "7"
-install:
-    - npm install -g eslint
+
+stages:
+    - test
+    - build
+    - deploy
 
 before_script:
     - ./test.sh 
