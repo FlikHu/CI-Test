@@ -7,6 +7,8 @@ class PopUpInfo extends HTMLElement {
     // Create a shadow root
     var shadow = this.attachShadow({ mode: 'open' })
 
+    var foo = bar
+
     // Create spans
     var wrapper = document.createElement('span')
     wrapper.setAttribute('class', 'wrapper')
