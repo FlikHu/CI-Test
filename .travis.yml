@@ -1,12 +1,11 @@
 language: node_js
 os: osx
 node_js:
-    - "7"
+    - "10"
 
-stages:
-    - test
-    - build
-    - deploy
+install:
+    - npm install
 
-before_script:
-    - ./test.sh 
+script:
+    - ./node_modules/.bin/eslint test.js
+    - phantomjs test/spec.js test/spec.html

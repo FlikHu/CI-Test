@@ -1,51 +1,43 @@
-class PopUpInfo extends HTMLElement {
+export default class PopUpInfo extends HTMLElement {
   constructor () {
     // Always call super first in constructor
-    super()
+    super();
 
     // write element functionality in here
     // Create a shadow root
-    var shadow = this.attachShadow({ mode: 'open' })
-
-    var foo = bar
+    var shadow = this.attachShadow({ mode: 'open' });
 
     // Create spans
-    var wrapper = document.createElement('span')
-    wrapper.setAttribute('class', 'wrapper')
-    var icon = document.createElement('span')
-    icon.setAttribute('class', 'icon')
-    icon.setAttribute('tabindex', 0)
-    var info = document.createElement('span')
-    info.setAttribute('class', 'info')
+    var wrapper = document.createElement('span');
+    wrapper.setAttribute('class', 'wrapper');
+    var icon = document.createElement('span');
+    icon.setAttribute('class', 'icon');
+    icon.setAttribute('tabindex', 0);
+    var info = document.createElement('span');
+    info.setAttribute('class', 'info');
 
     // Take attribute content and put it inside the info span
-    var text = this.getAttribute('text')
-    info.textContent = text
+    var text = this.getAttribute('text');
+    info.textContent = text;
 
     // Insert icon
-    let imgUrl
+    let imgUrl;
     if (this.hasAttribute('img')) {
-      imgUrl = this.getAttribute('img')
+      imgUrl = this.getAttribute('img');
     } else {
-      imgUrl = 'img/default.png'
+      imgUrl = 'img/default.png';
     }
-    var img = document.createElement('img')
-    img.src = imgUrl
-    icon.appendChild(img)
+    var img = document.createElement('img');
+    img.src = imgUrl;
+    icon.appendChild(img);
 
     // Create some CSS to apply to the shadow dom
-    var style = document.createElement('style')
-
-    style.textContent =
-      '.wrapper {' +
-      // CSS truncated for brevity
-
-      // attach the created elements to the shadow dom
-
-      shadow.appendChild(style)
-    shadow.appendChild(wrapper)
-    wrapper.appendChild(icon)
+    var style = document.createElement('style');
+    style.textContent = '';
+    shadow.appendChild(style);
+    shadow.appendChild(wrapper);
+    wrapper.appendChild(icon);
   }
 }
 
-customElements.define('popup-info', PopUpInfo)
+customElements.define('popup-info', PopUpInfo);
