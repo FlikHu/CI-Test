@@ -13,8 +13,8 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: 'wc.js', type: 'module', included: false },
-      { pattern: 'test/spec.js', type: 'js', included: true }
+      'wc.js',
+      'test/spec.js'
     ],
 
     // list of files / patterns to exclude
@@ -29,7 +29,7 @@ module.exports = function (config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec'],
+    reporters: ['progress'],
 
     // web server port
     port: 9876,

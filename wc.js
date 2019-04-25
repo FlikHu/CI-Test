@@ -1,43 +1,49 @@
-export default class PopUpInfo extends HTMLElement {
+class ExpandingList extends HTMLUListElement {
   constructor () {
     // Always call super first in constructor
     super();
+    this.setAttribute('foo', 'bar');
+    window.onload = function () {
+      const uls = Array.from(document.querySelectorAll(':root ul'));
+      const lis = Array.from(document.querySelectorAll(':root li'));
 
-    // write element functionality in here
-    // Create a shadow root
-    var shadow = this.attachShadow({ mode: 'open' });
+      uls.slice(1).forEach(ul => {
+        ul.style.display = 'none';
+      });
 
-    // Create spans
-    var wrapper = document.createElement('span');
-    wrapper.setAttribute('class', 'wrapper');
-    var icon = document.createElement('span');
-    icon.setAttribute('class', 'icon');
-    icon.setAttribute('tabindex', 0);
-    var info = document.createElement('span');
-    info.setAttribute('class', 'info');
+      lis.forEach(li => {
+        const childText = li.childNodes[0];
+        const newSpan = document.createElement('span');
 
-    // Take attribute content and put it inside the info span
-    var text = this.getAttribute('text');
-    info.textContent = text;
+        newSpan.textContent = childText.textContent;
+        childText.parentNode.insertBefore(newSpan, childText);
+        childText.parentNode.removeChild(childText);
+      });
 
-    // Insert icon
-    let imgUrl;
-    if (this.hasAttribute('img')) {
-      imgUrl = this.getAttribute('img');
-    } else {
-      imgUrl = 'img/default.png';
-    }
-    var img = document.createElement('img');
-    img.src = imgUrl;
-    icon.appendChild(img);
+      const spans = Array.from(document.querySelectorAll(':root span'));
 
-    // Create some CSS to apply to the shadow dom
-    var style = document.createElement('style');
-    style.textContent = '';
-    shadow.appendChild(style);
-    shadow.appendChild(wrapper);
-    wrapper.appendChild(icon);
+      spans.forEach(span => {
+        if (span.nextElementSibling) {
+          span.style.cursor = 'pointer';
+          span.parentNode.setAttribute('class', 'closed');
+          span.onclick = showul;
+        }
+      });
+
+      function showul (e) {
+        const nextul = e.target.nextElementSibling;
+
+        if (nextul.style.display == 'block') {
+          nextul.style.display = 'none';
+          nextul.parentNode.setAttribute('class', 'closed');
+        } else {
+          nextul.style.display = 'block';
+          nextul.parentNode.setAttribute('class', 'open');
+        }
+      }
+    };
   }
 }
 
-customElements.define('popup-info', PopUpInfo);
+// Define the new element
+customElements.define('expanding-list', ExpandingList, { extends: 'ul' });

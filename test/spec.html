@@ -1,12 +1,44 @@
-<!DOCTYPE html> 
-<html> 
-    <head> 
-        <title>My first unit test</title>        
-        </script> 
-        <script type="module" src="../test.js"></script> 
-    </head> 
-    <body> 
-        <popup-info id="1"></popup-info>
-        <div id="content" style="color: #000000"></div>
-    </body> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+    <ul is="expanding-list">
+        <li>UK
+            <ul>
+                <li>Yorkshire
+                    <ul>
+                        <li>Leeds
+                            <ul>
+                                <li>Train station</li>
+                                <li>Town hall</li>
+                                <li>Headrow</li>
+                            </ul>
+                        </li>
+                        <li>Bradford</li>
+                        <li>Hull</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>USA
+            <ul>
+                <li>California
+                    <ul>
+                        <li>Los Angeles</li>
+                        <li>San Francisco</li>
+                        <li>Berkeley</li>
+                    </ul>
+                </li>
+                <li>Nevada</li>
+                <li>Oregon</li>
+            </ul>
+        </li>
+    </ul>
+
+    <expanding-list></expanding-list>
+    <script src="../wc.js"></script>
+</body>
 </html>
