@@ -13,8 +13,8 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'wc.js',
-      'test/spec.js'
+      { pattern: 'wc.js', type: 'js', included: true },
+      { pattern: 'test/spec.js', type: 'js', included: true }
     ],
 
     // list of files / patterns to exclude
