@@ -1,7 +1,7 @@
 describe('Component abc Unit Test', function () {
-  let element = new ExpandingList();
+  let element = document.createElement('ul', { is: 'expanding-list' });
   console.log(element);
-  it('test attribute', function () {
-    expect(element.getAttribute('foo')).toBe('bar');
+  it('test children', function () {
+    expect(element).toBeTruthy();
   });
 });
