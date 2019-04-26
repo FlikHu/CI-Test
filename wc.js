@@ -33,7 +33,7 @@ class ExpandingList extends HTMLUListElement {
       function showul (e) {
         const nextul = e.target.nextElementSibling;
 
-        if (nextul.style.display == 'block') {
+        if (nextul.style.display === 'block') {
           nextul.style.display = 'none';
           nextul.parentNode.setAttribute('class', 'closed');
         } else {
@@ -45,5 +45,4 @@ class ExpandingList extends HTMLUListElement {
   }
 }
 
-// Define the new element
 customElements.define('expanding-list', ExpandingList, { extends: 'ul' });
