@@ -6,6 +6,6 @@ describe('Component abc Unit Test', function () {
   });
 
   it('test attribute', function () {
-    expect(element.getAttribute('foo')).toBeTruthy('bar');
+    expect(element.getAttribute('foo')).toBe('bar');
   });
 });
