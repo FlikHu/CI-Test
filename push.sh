@@ -6,13 +6,13 @@ setup_git() {
 }
 
 commit_website_files() {
-  git checkout -b production
+  git checkout production
   git add .
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_files() {
-  git remote add origin-pages https://${GH_TOKEN}@github.com/MVSE-outreach/resources.git > /dev/null 2>&1
+  git remote add origin-pages https://github.com/FlikHu/CI-Test.git > /dev/null 2>&1
   git push --quiet --set-upstream origin-pages gh-pages 
 }
 
