@@ -1,0 +1,1 @@
+{"uuid":"5f43dd80-ff04-469a-86fb-9754b1935423","parent":null,"pid":38622,"argv":["/usr/local/bin/node","/usr/local/bin/npm","test"],"execArgv":[],"cwd":"/Users/Flik/Desktop/CI-Test","time":1556352360720,"ppid":38621,"root":"2d7e1496-e8ac-49a3-97da-935cdbb745f6","coverageFilename":"/Users/Flik/Desktop/CI-Test/.nyc_output/5f43dd80-ff04-469a-86fb-9754b1935423.json","files":[]}

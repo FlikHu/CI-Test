@@ -4,7 +4,7 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "eslint test.js"
+    "test": "eslint wc.js"
   },
   "repository": {
     "type": "git",
@@ -24,11 +24,14 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "jasmine-core": "^2.2.0",
-    "karma": "^2.0.0",
+    "karma": "^4.1.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^2.0.1",
     "karma-spec-reporter": "0.0.32",
+    "nyc": "^14.0.0",
     "puppeteer": "^1.14.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "codacy-coverage": "^3.4.0"
+  }
 }
